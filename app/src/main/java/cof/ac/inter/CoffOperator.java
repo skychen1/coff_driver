@@ -264,13 +264,13 @@ class CoffOperator {
     public synchronized MachineState getMachineState() {
 
         CHLog.d(TAG, "----getMachineState---");
-        byte[] byteArr = {(byte) 0xFE, 0x01, 0x00, 0x00, 0x00, 0x57, (byte) 0xFB, (byte) 0x69};
+        byte[] byteArr = {(byte) 0xFE, 0x01, 0x00, 0x00, 0x00, (byte)0x62, (byte) 0xFB, (byte) 0x69};
         /*byte[] crcBytes = CRC.getCRC(byteArr, 0, byteArr.length - 3);
         byteArr[6] = crcBytes[1];
         byteArr[7] = crcBytes[0];*/
         CHLog.d(TAG, "send bytes = " + DataSwitcher.bytes2Hex(byteArr));
         doOperation(byteArr, WAIT_TIME);
-        byte[] rbyteArr = mCommunicator.read(95);
+        byte[] rbyteArr = mCommunicator.read(100);//95->100
         CHLog.d(TAG, "receive bytes = " + DataSwitcher.bytes2Hex(rbyteArr));
         MachineState mState = new MachineState();
         mState.setStateByteArr(rbyteArr);
@@ -280,10 +280,10 @@ class CoffOperator {
     public synchronized byte[] getMachineStateByByte() {
 
         CHLog.d(TAG, "----getMachineState---");
-        byte[] byteArr = {(byte) 0xFE, 0x01, 0x00, 0x00, 0x00, 0x57, (byte) 0xFB, (byte) 0x69};
+        byte[] byteArr = {(byte) 0xFE, 0x01, 0x00, 0x00, 0x00, (byte)0x62, (byte) 0xFB, (byte) 0x69};
         CHLog.d(TAG, "send bytes = " + DataSwitcher.bytes2Hex(byteArr));
         doOperation(byteArr, WAIT_TIME);
-        byte[] rbyteArr = mCommunicator.read(95);
+        byte[] rbyteArr = mCommunicator.read(100);
         CHLog.d(TAG, "receive bytes = " + DataSwitcher.bytes2Hex(rbyteArr));
 
         return rbyteArr;
