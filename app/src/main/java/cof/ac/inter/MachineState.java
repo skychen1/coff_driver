@@ -361,6 +361,13 @@ public class MachineState {
         return DataSwitcher.byte2Hex(curByte1) + "_" + DataSwitcher.byte2Hex(curByte2);
     }
 
+    public String getIceVersion() {
+
+        byte curByte1 = states[start + 90];
+        byte curByte2 = states[start + 91];
+        return DataSwitcher.byte2Hex(curByte1) + "_" + DataSwitcher.byte2Hex(curByte2);
+    }
+
     public void setMajorState() {
 
         byte state_byte = states[start + 0x14];
