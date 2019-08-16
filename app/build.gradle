@@ -50,7 +50,7 @@ android {
     }
 }
 def _BASENAME = "coff_driver";
-def _VERSION = "_0011";
+def _VERSION = "_0507";
 def _DestinationPath = "build"; //生成jar包的位置
 def zipFile = file('build/intermediates/bundles/default/classes.jar'); //待打包文件位置
 
