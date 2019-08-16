@@ -1,0 +1,88 @@
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+    defaultConfig {
+       //   applicationId "coff_driver.aichance.com.coff_driver"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*  task clearJar(type: Delete) {
+          delete 'build/coff_driver_0801.jar' //sdk是你自己jar包的名字，随便命名
+      }
+
+      task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
+          baseName 'coff_driver_0801'
+          from('build/intermediates/bundles/default/')
+          into('build/')
+          exclude('test/', 'BuildConfig.class', 'R.class')
+          //去掉R开头的文件
+          exclude { it.name.startsWith('R') }
+
+      }
+      makeJar.dependsOn(clearJar, build)*/
+
+   /*  ndk {
+         abiFilters "armeabi", "armeabi-v7a", "x86", "mips", "arm64-v8a", "mips"
+     }*/
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+def _BASENAME = "coff_driver";
+def _VERSION = "_0507";
+def _DestinationPath = "build"; //生成jar包的位置
+def zipFile = file('build/intermediates/bundles/default/classes.jar'); //待打包文件位置
+
+task deleteBuild(type:Delete){
+    delete _DestinationPath + _BASENAME + _VERSION + ".jar"
+}
+
+task makeJar(type:Jar){
+    from zipTree(zipFile)
+    from fileTree(dir:'src/main',includes:['assets/**']) //将assets目录打入jar包
+    baseName = _BASENAME + _VERSION
+    destinationDir = file(_DestinationPath)
+}
+
+makeJar.dependsOn(deleteBuild, build)
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+  //  compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+
+    // compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //  compile 'com.android.support.constraint:constraint-layout:1.1.2'
+    // testImplementation 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
+    //androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    //androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile files('libs/serial-20180713.jar')
+    compile 'com.google.zxing:core:3.3.0'
+}

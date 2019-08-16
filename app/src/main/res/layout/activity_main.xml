@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/qingxijiqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清洗机器" />
+
+        <Button
+            android:id="@+id/qingxiaodu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清洗消毒" />
+
+
+        <Button
+            android:id="@+id/fenbeitest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分杯测试" />
+
+
+        <Button
+            android:id="@+id/chureshui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出热水" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/kaimen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大门控制开" />
+
+
+        <Button
+            android:id="@+id/guanmen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大门控制关" />
+
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="机器复位" />
+
+        <Button
+            android:id="@+id/chongpaoqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="冲泡器动作控制" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/diaofen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="料盒掉粉测试" />
+
+
+        <Button
+            android:id="@+id/modou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="咖啡豆磨豆测试" />
+
+
+        <Button
+            android:id="@+id/beituoyidong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="杯托移动" />
+
+        <Button
+            android:id="@+id/diaocha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="泡茶器掉茶测试" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/paochaqidongzuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="泡茶器动作" />
+
+
+        <Button
+            android:id="@+id/yunbei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运杯系统测试" />
+
+
+        <Button
+            android:id="@+id/xiaomenkongzhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小门控制" />
+
+        <Button
+            android:id="@+id/qingkongshuixiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清空水箱" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/qingkongguolu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清空锅炉" />
+
+
+        <Button
+            android:id="@+id/kongqibang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Air pump测试" />
+
+
+        <Button
+            android:id="@+id/tuichuceshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出测试" />
+
+        <Button
+            android:id="@+id/qingximuokuai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="模块清洗" />
+    </LinearLayout>
+<TextView
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/zhizuokafei"
+        android:layout_width="wrap_content"
+        android:text="制作咖啡"
+        android:layout_height="wrap_content" />
+</LinearLayout>
